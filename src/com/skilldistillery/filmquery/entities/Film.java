@@ -8,6 +8,7 @@ public class Film {
 	private String description;
 	private int releaseYear;
 	private int languageID;
+	private String language;
 	private int rentalDuration;
 	private double rentalRate;
 	private int length;
@@ -19,7 +20,7 @@ public class Film {
 		super();
 	}
 
-	public Film(int id, String title, String description, int releaseYear, int languageID, int rentalDuration,
+	public Film(int id, String title, String description, int releaseYear, int languageID, String language, int rentalDuration,
 			double rentalRate, int length, double replacementCost, String rating, String specialFeatures) {
 		super();
 		this.id = id;
@@ -27,6 +28,7 @@ public class Film {
 		this.description = description;
 		this.releaseYear = releaseYear;
 		this.languageID = languageID;
+		this.language = language;
 		this.rentalDuration = rentalDuration;
 		this.rentalRate = rentalRate;
 		this.length = length;
@@ -73,6 +75,15 @@ public class Film {
 
 	public void setLanguageID(int languageID) {
 		this.languageID = languageID;
+	}
+	
+
+	public String getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
 	}
 
 	public int getRentalDuration() {
@@ -128,7 +139,6 @@ public class Film {
 		return Objects.hash(id);
 	}
 
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -144,29 +154,28 @@ public class Film {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Film [id=");
+		builder.append("Film id = ");
 		builder.append(id);
-		builder.append(", title=");
+		builder.append("\rTitle = ");
 		builder.append(title);
-		builder.append(", description=");
+		builder.append("\rDescription = ");
 		builder.append(description);
-		builder.append(", releaseYear=");
+		builder.append("\rReleaseYear = ");
 		builder.append(releaseYear);
-		builder.append(", languageID=");
-		builder.append(languageID);
-		builder.append(", rentalDuration=");
-		builder.append(rentalDuration);
-		builder.append(", rentalRate=");
-		builder.append(rentalRate);
-		builder.append(", length=");
-		builder.append(length);
-		builder.append(", replacementCost=");
-		builder.append(replacementCost);
-		builder.append(", rating=");
+		builder.append("\rLanguage = ");
+		builder.append(language);
+//		builder.append("\rRentalDuration = ");
+//		builder.append(rentalDuration);
+//		builder.append("\rRentalRate = ");
+//		builder.append(rentalRate);
+//		builder.append("\rLength = ");
+//		builder.append(length);
+//		builder.append("\rReplacementCost = ");
+//		builder.append(replacementCost);
+		builder.append("\rRating = ");
 		builder.append(rating);
-		builder.append(", specialFeatures=");
-		builder.append(specialFeatures);
-		builder.append("]");
+//		builder.append("\rSpecialFeatures = ");
+//		builder.append(specialFeatures);
 		return builder.toString();
 	}
 }
