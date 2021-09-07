@@ -33,17 +33,23 @@ public class FilmQueryApp {
 			printMenu();
 			System.out.println();
 			int resp = input.nextInt();
-			if (resp == 1) {
+			switch(resp) {
+			case 1: {
 				System.out.println("Please enter the film's ID");
 				int uID = input.nextInt();
 				Film film = db.findFilmById(uID);
+				if (film.equals(null)) {
+					System.out.println("Please enter a valid film ID.");
+				}
 				System.out.println(film);
-			} else if (resp == 2) {
+				break;
+			} case 2: {
 				System.out.println("Please enter the actor's ID");
 				int aID = input.nextInt();
 				Actor a = db.findActorById(aID);
 				System.out.println(a);
-			} else if (resp == 3) {
+				break;
+			} case 3: {
 				System.out.println("Please enter the film's ID");
 				int fID = input.nextInt();
 				List<Actor> act = db.findActorsByFilmId(fID);
@@ -52,7 +58,8 @@ public class FilmQueryApp {
 						System.out.println(act.get(i).toString());
 					}
 				}
-			} else if (resp == 4) {
+				break;
+			} case 4: {
 				System.out.println("Please enter a keyword to search by title:");
 				input.nextLine();
 				String key = input.nextLine();
@@ -62,10 +69,16 @@ public class FilmQueryApp {
 						System.out.println(fil.get(i).toString());
 					}
 				}
-			} else if (resp == 5) {
+				else if (fil == null) {
+					System.out.println("There are no film titles that match the keyword " + key);
+				}
+				break;
+			} case 5: {
 				System.out.println("Goobye!");
 				cont = false;
 			}
+			break;
+		}
 		}
 	}
 
