@@ -120,7 +120,6 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 			System.out.println();
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
-				System.out.println("Adding film");
 				Film film = new Film();
 				film.setId(rs.getInt("id"));
 				film.setTitle(rs.getString(2));
@@ -135,6 +134,8 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 				film.setReplacementCost(rs.getDouble("replacement_cost"));
 				film.setRating(rs.getString("rating"));
 				film.setSpecialFeatures(rs.getString("special_features"));
+				List<Actor> act = findActorsByFilmId(rs.getInt("id"));
+				film.setActors(act);
 				films.add(film);
 			}
 		} catch (SQLException e) {

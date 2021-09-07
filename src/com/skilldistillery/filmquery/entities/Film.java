@@ -165,8 +165,8 @@ public class Film {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Film id = ");
-		builder.append(id);
+//		builder.append("Film id = ");
+//		builder.append(id);
 		builder.append("\rTitle = ");
 		builder.append(title);
 		builder.append("\rDescription = ");

@@ -61,13 +61,11 @@ public class Actor {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Actor [id=");
-		builder.append(id);
-		builder.append(", firstName=");
+		builder.append("Actor: firstName = ");
 		builder.append(firstName);
-		builder.append(", lastName=");
+		builder.append(", lastName = ");
 		builder.append(lastName);
-		builder.append("]");
+		builder.append(" ");
 		return builder.toString();
 	}
 
